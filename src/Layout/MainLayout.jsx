@@ -8,9 +8,9 @@ import Hero from '../Components/Hero';
 const MainLayout = () => {
     return (
         <div>
-            <div className=''>
-                <Navbar></Navbar>
-            </div>
+            
+            <Navbar></Navbar>
+           
             <Hero></Hero>
             <Banner></Banner>
             <Outlet></Outlet>
