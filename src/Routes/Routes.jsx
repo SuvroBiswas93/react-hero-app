@@ -10,7 +10,6 @@ const router = createBrowserRouter([
     children :[
         {
             index: true,
-            loader:()=>fetch('./funitureData.json'),
             Component:Home
         },
     ]
