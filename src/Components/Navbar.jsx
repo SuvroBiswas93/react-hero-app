@@ -13,10 +13,43 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><NavLink to='/'>Home</NavLink></li>
-                        <li><NavLink to='/apps'>Apps</NavLink></li>
-                        <li><NavLink to='/install'>Installation</NavLink></li>
+                        className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow">
+                          <li>
+                            <NavLink
+                                    to="/"
+                                    className={({ isActive }) =>
+                                    isActive
+                                        ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
+                                        : ''
+                                    }
+                                >
+                                    Home
+                            </NavLink>
+                        </li>
+                    <li>
+                        <NavLink
+                            to="/apps"
+                            className={({ isActive }) =>
+                            isActive
+                                ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
+                                : ''
+                            }
+                        >
+                            Apps
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/install"
+                            className={({ isActive }) =>
+                            isActive
+                                ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
+                                : ''
+                            }
+                        >
+                            Installation
+                        </NavLink>
+                    </li>
                    
                     </ul>
                     </div>
@@ -27,15 +60,48 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                    <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink to='/apps'>Apps</NavLink></li>
-                    <li><NavLink to='/install'>Installation</NavLink></li>
+                   <li>
+                    <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                            isActive
+                                ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
+                                : ''
+                            }
+                        >
+                            Home
+                    </NavLink>
+                   </li>
+                    <li>
+                        <NavLink
+                            to="/apps"
+                            className={({ isActive }) =>
+                            isActive
+                                ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
+                                : ''
+                            }
+                        >
+                            Apps
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/install"
+                            className={({ isActive }) =>
+                            isActive
+                                ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
+                                : ''
+                            }
+                        >
+                            Installation
+                        </NavLink>
+                    </li>
                    
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <Link 
-                    to={`https://github.com/SuvroBiswas93/react-hero-app.git`} 
+                    to={`https://github.com/SuvroBiswas93`} 
                     className="btn text-white 
                     bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]">
                     <Github />Contribute

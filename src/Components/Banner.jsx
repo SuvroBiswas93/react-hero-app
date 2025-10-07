@@ -8,19 +8,19 @@ p-16">
                 Trusted By Millions, Built For You
             </h3>
             <div className='flex flex-col md:flex-row justify-around items-center mt-8'>
-                <div className='text-white '>
+                <div className='text-white text-center '>
                     <p className='text-sm'>Total DownLoads</p>
                     <p className='text-5xl font-bold my-3'>29.6 M</p>
                     <p className='text-sm'>21% More Than Last Month</p>
                 </div>
                 
-                <div className='text-white'>
+                <div className='text-white text-center'>
                     <p className='text-sm'>Total Reviews</p>
                     <p className='text-5xl font-bold my-3 '>906K</p>
                     <p className='text-sm'>46% More Than Last Month</p>
                 </div>
                 
-                <div className='text-white'>
+                <div className='text-white text-center'>
                     <p className='text-sm'>Active Apps</p>
                     <p className='text-5xl font-bold my-3'>132+</p>
                     <p className='text-sm '>31 More Will Launch</p>
