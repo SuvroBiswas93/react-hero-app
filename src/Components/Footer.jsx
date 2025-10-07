@@ -7,7 +7,7 @@ const Footer = () => {
             <aside>
                 <img src={logoImg} alt=""  className='w-10 h-10'/>
                 <p>
-                Hero App Ltd.
+                HeroApp Ltd.
                 <br />
                 Providing reliable tech since 1992
                 </p>
