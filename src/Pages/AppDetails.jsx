@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
 import reviewImg from '../assets/icon-review.png';
 import downloadImg from '../assets/icon-downloads.png';
@@ -12,15 +12,23 @@ const AppDetails = () => {
     const singleCard = data.find(card => card.id === cardId)
 
     const{image,title,reviews,companyName,description,downloads,ratingAvg}=singleCard
+
+    const[install,setInstall]=useState(false)
+
+    const handleClick = e =>{
+        setInstall(true)
+    }
  
     return (
-        <div className='flex  gap-7 my-10 '>
+        <>
+        
+            <div className='flex flex-col md:flex-row  gap-7 mt-10 '>
 
           <div className=' bg-gray-200 flex justify-center items-center p-5 rounded-xl '>
                 <img src={image} alt="" className='w-50 h-45'/>
           </div>
           <div className=' space-y-4'>
-            <div className='space-y-4'>
+            <div className='space-y-4  '>
                 <h3 className='text-4xl font-bold'>{title}</h3>
                 <h3>Developed By : <span className='text-purple-500 font-bold'>{companyName}</span></h3>
             </div>
@@ -39,18 +47,35 @@ const AppDetails = () => {
                 <div className='flex flex-col justify-center items-center'>
                     <img src={reviewImg} alt="" className='w-6 h-6'/>
                     <h3 className='tex-sm'>Total reviews</h3>
-                    <h3 className='font-bold text-2xl'>{downloads}</h3>
+                    <h3 className='font-bold text-2xl'>{reviews}</h3>
                 </div>
             </div>
 
-            <div>
-                <Link to='' className='btn bg-green-500 text-white'>Install Now</Link>
+            <div className='flex justify-center md:justify-start '>
+                <Link 
+                to='' 
+                onClick={handleClick} 
+                className='btn bg-green-500 text-white'>
+                    Install Now
+                </Link>
             </div>
             
           </div>
-        </div>
+            </div>
+          
+           <div className="divider"></div>
+           <div>
+            ratings
+           </div>
+           <div className="divider"></div>
+           <div className='mb-10 space-y-3'>
+            <h3 className='font-bold text-3xl '>Description</h3>
+             <p className='text-justify'>{description}</p>
+           </div>
 
-        
+        </>
+
+       
     );
 };
 

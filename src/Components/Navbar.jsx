@@ -16,6 +16,7 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow">
                           <li>
                             <NavLink
+                                    end
                                     to="/"
                                     className={({ isActive }) =>
                                     isActive
@@ -28,6 +29,7 @@ const Navbar = () => {
                         </li>
                     <li>
                         <NavLink
+                            end
                             to="/apps"
                             className={({ isActive }) =>
                             isActive
@@ -40,7 +42,8 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/install"
+                            end
+                            to="/apps/install"
                             className={({ isActive }) =>
                             isActive
                                 ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
@@ -62,6 +65,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                    <li>
                     <NavLink
+                            end
                             to="/"
                             className={({ isActive }) =>
                             isActive
@@ -74,6 +78,7 @@ const Navbar = () => {
                    </li>
                     <li>
                         <NavLink
+                            end
                             to="/apps"
                             className={({ isActive }) =>
                             isActive
@@ -86,7 +91,8 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/install"
+                            end
+                            to="/apps/install"
                             className={({ isActive }) =>
                             isActive
                                 ? 'text-violet-600 border-b-2 border-violet-600 pb-1'
