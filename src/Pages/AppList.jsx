@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { getStoredItem, removeItemfromStore } from '../utilities/localStorage';
 import InstallCard from '../Components/InstallCard';
+import Swal from 'sweetalert2';
 
 const AppList = () => {
     const [appList,setAppList] = useState([])
@@ -26,7 +27,11 @@ const AppList = () => {
     })();
 
     const handleRemove = (id) => {
-   
+            Swal.fire({
+                title: "Drag me!",
+                icon: "success",
+                draggable: true
+                });
          removeItemfromStore(id)
          setAppList(prev => prev.filter(p => p.id !== id))
   }

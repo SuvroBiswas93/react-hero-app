@@ -15,7 +15,7 @@ const Apps = () => {
     : allCardsData
     if(searchedProducts.length === 0){
         return(
-             <div className='text-center'>
+             <div className='text-center mt-20'>
                 <img src={noAppImg} alt="" />
                 <h3>OOPS!! APP NOT FOUND</h3>
                 <P>The app you are looking is not found in your system, Please tey another apps.</P>

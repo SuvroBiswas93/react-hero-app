@@ -26,7 +26,7 @@ const addItemToStore = (id) =>{
 export const removeItemfromStore = id => {
   const appList  = getStoredItem() 
   try {
-    const updatedList = appList.filter(p => p.id !== id)
+    const updatedList = appList.filter(p => parseInt(p) !== parseInt(id))
     localStorage.setItem('appList', JSON.stringify(updatedList))
   } catch (err) {
     console.log(err)
