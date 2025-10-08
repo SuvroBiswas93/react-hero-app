@@ -23,15 +23,16 @@ const Apps = () => {
     }
     return (
         <div>
-            <div className='flex justify-between py-5 items-center px-10'>
+            <div className='flex flex-col space-y-2 md:flex-row justify-between py-5 items-center md:px-10'>
                 <h1 className='text-3xl font-semibold'>
                 All Apps{' '}
                 <span className='text-sm text-gray-500'>
                     ({searchedProducts.length}) Apps Found.
                 </span>
                 </h1>
-                <label className='input'>
+                <label className='input border-2 border-purple-500 '>
                 <input
+                    className='text-purple-500 font-bold'
                     value={search}
                     onChange={e => setSearch(e.target.value)}
                     type='search'
@@ -39,7 +40,7 @@ const Apps = () => {
                 />
                 </label>
         </div>
-           <div className='grid grid-cols-1 md:grid-cols-4 gap-4 px-10 my-10'>
+           <div className='grid grid-cols-1 md:grid-cols-4 gap-4 px-2 md:px-10 my-10'>
                 {
                     searchedProducts.map((card,id)=><AppCard key={id} data={card}></AppCard>)
                 }

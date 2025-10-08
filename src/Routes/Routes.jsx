@@ -18,10 +18,7 @@ const router = createBrowserRouter([
             loader:()=>fetch('/appsData.json')
         },
        
-        {
-            path:'/install',
-            Component:Installation
-        }
+        
     ]
   },
    {
@@ -39,6 +36,10 @@ const router = createBrowserRouter([
                 Component:AppDetails,
                 loader:()=>fetch('/appsData.json')
               },
+              {
+                path:'install',
+                Component:Installation
+              }
             ]
       },
               
