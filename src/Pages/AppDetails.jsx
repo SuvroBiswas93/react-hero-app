@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams } from 'react-router';
 import reviewImg from '../assets/icon-review.png';
 import downloadImg from '../assets/icon-downloads.png';
 import startImg from '../assets/icon-ratings.png'
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 const AppDetails = () => {
     const {id}=useParams()
@@ -11,13 +12,13 @@ const AppDetails = () => {
 
     const singleCard = data.find(card => card.id === cardId)
 
-    const{image,title,reviews,companyName,description,downloads,ratingAvg}=singleCard
+    const{image,title,reviews,companyName,description,downloads,ratingAvg,ratings}=singleCard
 
-    const[install,setInstall]=useState(false)
+    // const[install,setInstall]=useState(false)
 
-    const handleClick = e =>{
-        setInstall(true)
-    }
+    // const handleClick = e =>{
+    //     setInstall(true)
+    // }
  
     return (
         <>
@@ -52,21 +53,42 @@ const AppDetails = () => {
             </div>
 
             <div className='flex justify-center md:justify-start '>
-                <Link 
+                <button 
                 to='' 
-                onClick={handleClick} 
+                onClick=''
                 className='btn bg-green-500 text-white'>
                     Install Now
-                </Link>
+                </button>
             </div>
             
           </div>
             </div>
           
            <div className="divider"></div>
-           <div>
-            ratings
-           </div>
+          
+             <div className="mt-10">
+                    <h3 className="text-2xl font-semibold mb-4">Ratings</h3>
+                    <ResponsiveContainer width="100%" height={300}>
+                        <BarChart
+                        data={[...ratings].reverse()}
+                        layout="vertical"
+                       
+                        >
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                        <XAxis type="number" />
+                        <YAxis dataKey="name" type="category"/>
+                        <Tooltip />
+                        <Bar dataKey="count" 
+                        fill="#FF8C00"
+                         barSize={25}  
+                         animationBegin={0}
+                        animationDuration={1500}
+                        animationEasing="ease-out"
+                         />
+                        </BarChart>
+                    </ResponsiveContainer>
+            </div>
+           
            <div className="divider"></div>
            <div className='mb-10 space-y-3'>
             <h3 className='font-bold text-3xl '>Description</h3>
