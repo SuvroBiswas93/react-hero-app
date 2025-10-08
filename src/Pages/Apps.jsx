@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import AppCard from './AppCard';
+import noAppImg from '../assets/App-Error.png'
 
 const Apps = () => {
     const allCardsData = useLoaderData()
@@ -15,7 +16,10 @@ const Apps = () => {
     if(searchedProducts.length === 0){
         return(
              <div className='text-center'>
-                no app found
+                <img src={noAppImg} alt="" />
+                <h3>OOPS!! APP NOT FOUND</h3>
+                <P>The app you are looking is not found in your system, Please tey another apps.</P>
+                <Link to='/' className='bg-purple-400 hover:bg-purple-700 text-white'>Go Back!</Link>
             </div>
         )
     }

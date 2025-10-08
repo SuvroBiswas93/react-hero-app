@@ -6,12 +6,14 @@ import Apps from "../Pages/Apps";
 import MainLayout2 from "../Layout/MainLayout2";
 import AppDetails from "../Pages/AppDetails";
 import AppList from "../Pages/AppList";
+import Errorpage from "../Pages/Errorpage";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
+    errorElement:<Errorpage></Errorpage>,
      hydrateFallbackElement:<p>Loading...</p>,
     children :[
         {
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
    {
             path:'/apps',
             Component:MainLayout2,
+            errorElement:<Errorpage></Errorpage>,
             hydrateFallbackElement:<p>Loading...</p>,
             children:[
               {
