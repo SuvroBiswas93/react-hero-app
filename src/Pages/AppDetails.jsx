@@ -5,6 +5,7 @@ import downloadImg from '../assets/icon-downloads.png';
 import startImg from '../assets/icon-ratings.png'
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { addItemToStore, getStoredItem } from '../utilities/localStorage';
+import Swal from 'sweetalert2';
 
 const AppDetails = () => {
     const {id}=useParams()
@@ -18,9 +19,15 @@ const AppDetails = () => {
     const[install,setInstall]=useState(false)
 
     const handleClick = id =>{
-        alert('App installed')
         setInstall(true)
         addItemToStore(id)
+        Swal.fire({
+            title: "App Installed!",
+            icon: "success",
+            draggable: true
+            });
+        
+        
     }
 
     useEffect(()=>{

@@ -6,9 +6,7 @@ const Apps = () => {
     const allCardsData = useLoaderData()
     console.log(allCardsData)
     const[search,setSearch]=useState('')
-    console.log(search)
     const term = search.trim().toLowerCase()
-    console.log(term)
     const searchedProducts = term
     ? allCardsData.filter(product =>
         product.title.toLowerCase().includes(term)

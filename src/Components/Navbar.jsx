@@ -57,7 +57,7 @@ const Navbar = () => {
                     </ul>
                     </div>
                     <Link to='/' 
-                    className=" text-xl font-bold flex justify-center items-center gap-2">
+                    className=" text-xl font-bold text-purple-400 flex justify-center items-center gap-2">
                     <img src={logoImg} alt="" className='h-8 w-8' /> HeroApp
                     </Link>
                 </div>
