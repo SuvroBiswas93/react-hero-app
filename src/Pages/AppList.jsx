@@ -28,7 +28,7 @@ const AppList = () => {
 
     const handleRemove = (id) => {
             Swal.fire({
-                title: "Drag me!",
+                title: "App Uinstalled",
                 icon: "success",
                 draggable: true
                 });
