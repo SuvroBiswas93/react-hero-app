@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
 import reviewImg from '../assets/icon-review.png';
 import downloadImg from '../assets/icon-downloads.png';
 import startImg from '../assets/icon-ratings.png'
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { addItemToStore, getStoredItem } from '../utilities/localStorage';
 
 const AppDetails = () => {
     const {id}=useParams()
@@ -14,16 +15,26 @@ const AppDetails = () => {
 
     const{image,title,reviews,companyName,description,downloads,ratingAvg,ratings}=singleCard
 
-    // const[install,setInstall]=useState(false)
+    const[install,setInstall]=useState(false)
 
-    // const handleClick = e =>{
-    //     setInstall(true)
-    // }
+    const handleClick = id =>{
+        alert('App installed')
+        setInstall(true)
+        addItemToStore(id)
+    }
+
+    useEffect(()=>{
+         const get = getStoredItem()
+         const isInstalled = get ?.find((item)=>item == cardId)
+         if(isInstalled){
+            setInstall(true)
+         }
+    },[cardId])
  
     return (
         <>
         
-            <div className='flex flex-col md:flex-row  gap-7 mt-10 '>
+            <div className='flex flex-col lg:flex-row gap-7 mt-10 '>
 
           <div className=' bg-gray-200 flex justify-center items-center p-5 rounded-xl '>
                 <img src={image} alt="" className='w-50 h-45'/>
@@ -54,11 +65,16 @@ const AppDetails = () => {
 
             <div className='flex justify-center md:justify-start '>
                 <button 
-                to='' 
-                onClick=''
-                className='btn bg-green-500 text-white'>
-                    Install Now
+                    onClick={() => handleClick(id)}
+                    // disabled={install}
+                    className={`btn bg-green-500 text-white
+                         ${install ? 'opacity-70 pointer-events-none cursor-not-allowed'
+                             : ' hover:bg-green-600'}`}
+                        
+                    >
+                    {install ? 'Installed' : 'Install Now'}
                 </button>
+
             </div>
             
           </div>
