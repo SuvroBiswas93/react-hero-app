@@ -6,7 +6,7 @@ import ratingIcon from '../assets/icon-ratings.png'
 const AppCard = ({data}) => {
     const{title,image,ratingAvg,downloads,id}=data
     return (
-       <Link to={`apps/appdetails/${id}`}>
+       <Link to={`/apps/appdetails/${id}`}>
             <div className="card bg-base-100  p-4  shadow-lg hover:scale-105 transition ease-in-out">
         <figure className='h-40 overflow-hidden bg-gray-300  rounded-xl'>
             <img
