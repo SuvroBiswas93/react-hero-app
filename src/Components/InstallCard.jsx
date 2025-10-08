@@ -9,7 +9,7 @@ const InstallCard = ({item,onRemove}) => {
     const{title,downloads,ratingAvg,image}=item
 
     return (
-        <div className='flex justify-between items-center space-y-2 mb-6 bg-white shadow-2xl px-6 py-2 rounded-xl'>
+        <div className='flex justify-between items-center space-y-2 mb-6 bg-white shadow-2xl lg:px-6 px-2 py-2 rounded-xl'>
            <div className='flex justify-center items-center gap-4'>
                 <div>
                     <img src={image} alt={title} className='w-14 h-14 p-2 rounded bg-gray-400' />

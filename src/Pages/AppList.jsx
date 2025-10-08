@@ -14,7 +14,7 @@ const AppList = () => {
         const myAppList = data.filter(app => covertedStoredAppData.includes(app.id))
         setAppList(myAppList)
     },[data])
-     if (!appList.length) return <p>No Data Available</p>
+     if (!appList.length) return <p className='text-center mt-35 text-4xl font-bold text-purple-500'>No Data Available!!</p>
 
       const sortedList = (() => {
         if (sort === 'High-Low') {
