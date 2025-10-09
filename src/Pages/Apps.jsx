@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLoaderData } from 'react-router';
+import { Link, useLoaderData, useNavigate } from 'react-router';
 import AppCard from './AppCard';
 import noAppImg from '../assets/App-Error.png'
 
@@ -13,14 +13,24 @@ const Apps = () => {
         product.title.toLowerCase().includes(term)
       )
     : allCardsData
+
+    const navigate=useNavigate()
+    const handleGoBacktbn=()=>{
+        navigate(-1)
+    }
     if(searchedProducts.length === 0){
         return(
-             <div className='text-center mt-20'>
-                <img src={noAppImg} alt="" />
-                <h3>OOPS!! APP NOT FOUND</h3>
-                <P>The app you are looking is not found in your system, Please tey another apps.</P>
-                <Link to='/' className='bg-purple-400 hover:bg-purple-700 text-white'>Go Back!</Link>
+             <>
+                <div className='flex flex-col justify-center items-center text-center space-y-3 my-20'>
+                <img src={noAppImg} alt="" className=''/>
+                <h3 className='text-3xl font-bold'>OOPS!! APP NOT FOUND</h3>
+                <p className='text-gray-400'>The app you are looking is not found in your system, Please try another apps.</p>
+                <Link to='/apps' 
+                className='bg-purple-500 hover:bg-purple-700 text-white btn'
+                onClick={handleGoBacktbn}
+                >Go Back!</Link>
             </div>
+             </>
         )
     }
     return (

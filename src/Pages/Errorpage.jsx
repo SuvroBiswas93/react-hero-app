@@ -1,8 +1,9 @@
 import React from 'react';
-import { useRouteError } from 'react-router';
+import { useNavigate, useRouteError } from 'react-router';
 
 const Errorpage = () => {
     const error =useRouteError()
+    const navigate = useNavigate()
     return (
          <>
             <Navbar />
