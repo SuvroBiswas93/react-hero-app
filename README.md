@@ -107,7 +107,7 @@ Users can:
 
     ---
 
-    ## 🪄 Live Demo
+    ## ⚡ Live Demo
 
-🔗 [View Live Link](https://github.com/)  
+    🔗  [View Live Link](https://github.com/)  
 
