@@ -109,5 +109,5 @@ Users can:
 
     ## ⚡ Live Demo
 
-    🔗  [View Live Link](https://github.com/)  
+    🔗  [Live Link](https://react-hero-app-io.netlify.app/)  
 
