@@ -20,7 +20,7 @@ const Home = () => {
             </div>
 
             <div className='py-8 grid place-items-center'>
-                <Link to='/apps' className='btn bg-purple-500 text-white'>Show All</Link>
+                <Link to='/apps' className='btn bg-purple-500 hover:bg-purple-800 text-white'>Show All</Link>
             </div>
             
         </div>
