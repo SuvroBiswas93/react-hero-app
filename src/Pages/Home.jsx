@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import AppCard from './AppCard';
 
 const Home = () => {
     const appData = useLoaderData()
-    console.log(appData)
+     console.log(appData)  
      const homePageData = appData.slice(0,8)
 
     return (

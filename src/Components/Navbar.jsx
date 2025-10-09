@@ -107,6 +107,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <Link 
+                    target="_blank"
                     to={`https://github.com/SuvroBiswas93`} 
                     className="btn text-white 
                     bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]">

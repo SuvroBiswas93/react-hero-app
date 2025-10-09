@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
 import AppCard from './AppCard';
 import noAppImg from '../assets/App-Error.png'
+import Loader from '../Components/Loader';
 
 const Apps = () => {
     const allCardsData = useLoaderData()
     console.log(allCardsData)
     const[search,setSearch]=useState('')
+    const [loading,setLoading]=useState(false)
     const term = search.trim().toLowerCase()
     const searchedProducts = term
     ? allCardsData.filter(product =>
@@ -18,6 +20,15 @@ const Apps = () => {
     const handleGoBacktbn=()=>{
         navigate(-1)
     }
+
+    const handleSearch=()=>{
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 1000);
+        
+    }
+console.log(loading)
     if(searchedProducts.length === 0){
         return(
              <>
@@ -46,17 +57,22 @@ const Apps = () => {
                 <input
                     className='text-purple-500 font-bold'
                     value={search}
-                    onChange={e => setSearch(e.target.value)}
+                    onChange={e => {
+                        handleSearch()
+                        setSearch(e.target.value)
+                    }}
                     type='search'
                     placeholder='Search Apps'
                 />
                 </label>
         </div>
-           <div className='grid grid-cols-1 md:grid-cols-4 gap-4 px-2 md:px-10 my-10'>
+           {
+            loading ?(<Loader count={15}></Loader>) : <div className='grid grid-cols-1 md:grid-cols-4 gap-4 px-2 md:px-10 my-10'>
                 {
                     searchedProducts.map((card,id)=><AppCard key={id} data={card}></AppCard>)
                 }
            </div>
+           }
         </div>
     );
 };

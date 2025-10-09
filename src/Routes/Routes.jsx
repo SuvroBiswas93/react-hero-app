@@ -6,6 +6,7 @@ import MainLayout2 from "../Layout/MainLayout2";
 import AppDetails from "../Pages/AppDetails";
 import AppList from "../Pages/AppList";
 import Errorpage from "../Pages/Errorpage";
+import Loader from "../Components/Loader";
 
 
 const router = createBrowserRouter([
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     path: "/",
     Component: MainLayout,
     errorElement:<Errorpage></Errorpage>,
-     hydrateFallbackElement:<p>Loading...</p>,
+     hydrateFallbackElement:<Loader></Loader>,
     children :[
         {
             index: true,
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             path:'/apps',
             Component:MainLayout2,
             errorElement:<Errorpage></Errorpage>,
-            hydrateFallbackElement:<p>Loading...</p>,
+            hydrateFallbackElement:<div className="w-screen h-screen flex justify-center items-center"><span className="loading loading-bars loading-xl"></span></div>,
             children:[
               {
                 index:true,
