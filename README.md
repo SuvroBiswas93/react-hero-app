@@ -84,24 +84,24 @@ Users can:
    ```bash
    git clone https://github.com/SuvroBiswas93/react-hero-app.git
 
-    Navigate to the project directory
+    --Navigate to the project directory
 
-    cd react-hero-app
-
-
-    Install dependencies
-
-    npm install
+     cd react-hero-app
 
 
-    Run the development server
+    --Install dependencies
 
-    npm run dev
+        npm install
 
 
-    Open the app in your browser
+    --Run the development server
 
-    http://localhost:5173
+        npm run dev
+
+
+    --Open the app in your browser
+
+        http://localhost:5173
     
     ```
 
