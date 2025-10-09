@@ -44,6 +44,8 @@ const AppList = () => {
             reverseButtons: true
             }).then((result) => {
             if (result.isConfirmed) {
+                 removeItemfromStore(id)
+                 setAppList(prev => prev.filter(p => p.id !== id))
                 swalWithBootstrapButtons.fire({
                 title: "Uninstalled!",
                 text: "App has been Uninstalled.",
@@ -61,8 +63,7 @@ const AppList = () => {
             }
             });
 
-         removeItemfromStore(id)
-         setAppList(prev => prev.filter(p => p.id !== id))
+        
   }
 
     return (
