@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLoaderData, useNavigate } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import AppCard from './AppCard';
 import noAppImg from '../assets/App-Error.png'
 
@@ -25,10 +25,10 @@ const Apps = () => {
                 <img src={noAppImg} alt="" className=''/>
                 <h3 className='text-3xl font-bold'>OOPS!! APP NOT FOUND</h3>
                 <p className='text-gray-400'>The app you are looking is not found in your system, Please try another apps.</p>
-                <Link to='/apps' 
-                className='bg-purple-500 hover:bg-purple-700 text-white btn'
+                <button 
+                className='bg-purple-500 hover:bg-purple-800 text-white btn'
                 onClick={handleGoBacktbn}
-                >Go Back!</Link>
+                >Go Back !</button>
             </div>
              </>
         )
